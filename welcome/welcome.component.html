@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Carousel container -->
+     <carousel>
+        <slide *ngFor="let category of slideCategories;let first=first"
+                    class="carousel-item" [ngClass]="{active: first}">
+            <db-category-slide [category]="category"></db-category-slide>
+        </slide>
+     </carousel>
+    </div>
+  </div>
+  <!-- /.row -->
+  <div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4 mb-4" *ngFor="let category of cardCategories | async">
+      <db-category-card
+        [category]="category">
+      </db-category-card>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
